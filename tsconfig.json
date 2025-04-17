@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "node16",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "importHelpers": false,
+    "resolveJsonModule": true,
+    "composite": true,
+    "skipLibCheck": true,
+    "noImplicitOverride": true,
+    "allowArbitraryExtensions": true,
+
+    // lib
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+
+    // strictness
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    
+    // Add this to handle @zkpassport modules
+    "paths": {
+      "@zkpassport/*": ["./node_modules/@zkpassport/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts", 
+    "test/**/*.ts", 
+    "contracts/**/*.json", 
+    "artifacts/**/*.json",
+    "artifacts/**/*.ts",
+    "src/fee/sponsored_fpc.ts", 
+    "src/artifacts/ObsidionDeployerFPC.ts", 
+    "src/artifacts/IdentityRegistry.ts", 
+    "src/identity/identityRegistryService.ts"
+  ],
+  "exclude": ["node_modules", "dist", "no-commit", "trash"],
+  "imports": {
+    "@zkpassport/utils/dist/esm/merkle-tree": {
+      "default": "./node_modules/@zkpassport/utils/dist/esm/merkle-tree/index.js"
+    }
+  }
+}
